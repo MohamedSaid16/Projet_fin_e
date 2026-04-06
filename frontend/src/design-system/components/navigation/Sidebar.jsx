@@ -87,6 +87,17 @@ const icons = {
       <path strokeLinecap="round" strokeLinejoin="round" d="M9 13.5l1.5 1.5 4.5-4.5" />
     </svg>
   ),
+  '/dashboard/admin/users': (
+    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M18 18.75a3 3 0 00-3-3h-6a3 3 0 00-3 3m12 0v.75A1.5 1.5 0 0116.5 21h-9A1.5 1.5 0 016 19.5v-.75m12 0h1.5A1.5 1.5 0 0021 17.25v-.75a4.5 4.5 0 00-4.5-4.5h-.75m-7.5 6.75h-.75A4.5 4.5 0 013 14.25v-.75A1.5 1.5 0 014.5 12H6m6-3a3 3 0 100-6 3 3 0 000 6z" />
+    </svg>
+  ),
+  '/dashboard/admin/pfe-group-work': (
+    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75A2.25 2.25 0 016 4.5h12a2.25 2.25 0 012.25 2.25v10.5A2.25 2.25 0 0118 19.5H6a2.25 2.25 0 01-2.25-2.25V6.75z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M7.5 9h9m-9 3h6m-6 3h4.5" />
+    </svg>
+  ),
 };
 
 /* ── Section labels for grouping (i18n keys) ─────────────────── */
@@ -105,6 +116,8 @@ const SECTIONS = {
   '/dashboard/support':        null,
   '/dashboard/admin/academic/management': 'sections.system',
   '/dashboard/admin/academic/assignments': 'sections.system',
+  '/dashboard/admin/users': 'sections.system',
+  '/dashboard/admin/pfe-group-work': 'sections.system',
 };
 
 export default function Sidebar({ modules = [], open = false, onClose, onNavigate, activeKey, collapsed = false, onToggleCollapse }) {
@@ -193,7 +206,7 @@ export default function Sidebar({ modules = [], open = false, onClose, onNavigat
                   )}
                   <button
                     onClick={() => onNavigate?.(item.path)}
-                    title={collapsed ? item.name : undefined}
+                    title={collapsed ? (item.name || item.path) : undefined}
                     className={`
                       w-full flex items-center gap-3 px-3 py-2 rounded-md text-sm font-medium
                       transition-colors duration-100
@@ -204,8 +217,8 @@ export default function Sidebar({ modules = [], open = false, onClose, onNavigat
                       }
                     `}
                   >
-                    <span className="w-5 h-5 shrink-0">{icons[item.path]}</span>
-                    <span className={`truncate ${collapsed ? 'lg:hidden' : ''}`}>{item.name}</span>
+                    <span className="w-5 h-5 shrink-0">{icons[item.path] || icons['/dashboard']}</span>
+                    <span className={`truncate ${collapsed ? 'lg:hidden' : ''}`}>{item.name || item.path}</span>
                   </button>
                 </li>
               );

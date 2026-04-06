@@ -35,6 +35,7 @@ const ALL_MODULES = [
   { nameKey: 'nav.userManagement', path: '/dashboard/admin/users',   roles: ['vice_doyen', 'admin'] },
   { nameKey: 'nav.academicStructure', path: '/dashboard/admin/academic/management', roles: ['vice_doyen', 'admin'] },
   { nameKey: 'nav.academicAssignments', path: '/dashboard/admin/academic/assignments', roles: ['vice_doyen', 'admin'] },
+  { nameKey: 'nav.pfeGroupWork', path: '/dashboard/admin/pfe-group-work', roles: ['vice_doyen', 'admin'] },
 ];
 
 /* Map DB roles to the UI role token used by children (student | teacher | admin) */
@@ -78,6 +79,13 @@ function AdminHomePanel({ onNavigate }) {
           className="rounded-xl border border-edge bg-canvas px-4 py-2 text-sm font-medium text-ink transition hover:border-brand/30 hover:text-brand"
         >
           Open Requests
+        </button>
+        <button
+          type="button"
+          onClick={() => onNavigate('/dashboard/admin/pfe-group-work')}
+          className="rounded-xl border border-edge bg-canvas px-4 py-2 text-sm font-medium text-ink transition hover:border-brand/30 hover:text-brand"
+        >
+          Manage PFE
         </button>
       </div>
     </div>

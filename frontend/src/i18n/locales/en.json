@@ -19,7 +19,8 @@
     "profile": "Profile",
     "userManagement": "User Management",
     "academicStructure": "Academic Structure",
-    "academicAssignments": "Academic Assignments"
+    "academicAssignments": "Academic Assignments",
+    "pfeGroupWork": "PFE"
   },
   "sections": {
     "academic": "Academic",

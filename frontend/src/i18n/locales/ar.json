@@ -19,7 +19,8 @@
     "profile": "الملف الشخصي",
     "userManagement": "إدارة المستخدمين",
     "academicStructure": "الهيكلة الأكاديمية",
-    "academicAssignments": "الإسنادات الأكاديمية"
+    "academicAssignments": "الإسنادات الأكاديمية",
+    "pfeGroupWork": "PFE"
   },
   "sections": {
     "academic": "أكاديمي",

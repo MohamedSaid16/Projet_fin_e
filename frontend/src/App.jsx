@@ -38,6 +38,7 @@ import DocumentsPage from './pages/DocumentsPage';
 import StudentNotesPage from './pages/StudentNotesPage';
 import StudentSpecialiteChoicePage from './pages/StudentSpecialiteChoicePage';
 import SuperAdminGroupsPage from './pages/SuperAdmin/Groups';
+import PfeGroupWorkPage from './pages/PfeGroupWorkPage';
 
 /* ── Misc ── */
 import UnauthorizedPage from './pages/UnauthorizedPage';
@@ -101,6 +102,7 @@ function App() {
               <Route path="/dashboard/admin/academic/management" element={<ProtectedRoute allowedRoles={['admin', 'vice_doyen']}><DashboardLayout><AdminAcademicManagementPage /></DashboardLayout></ProtectedRoute>} />
               <Route path="/dashboard/admin/academic/assignments" element={<ProtectedRoute allowedRoles={['admin', 'vice_doyen']}><DashboardLayout><AdminAcademicAssignmentsPage /></DashboardLayout></ProtectedRoute>} />
               <Route path="/dashboard/admin/groups" element={<ProtectedRoute><DashboardLayout><SuperAdminGroupsPage /></DashboardLayout></ProtectedRoute>} />
+              <Route path="/dashboard/admin/pfe-group-work" element={<ProtectedRoute allowedRoles={['admin', 'vice_doyen']}><DashboardLayout><PfeGroupWorkPage /></DashboardLayout></ProtectedRoute>} />
 
               {/* ── Error pages ── */}
               <Route path="/unauthorized" element={<UnauthorizedPage />} />
